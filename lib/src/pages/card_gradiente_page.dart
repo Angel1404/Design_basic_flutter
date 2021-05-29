@@ -15,6 +15,7 @@ class _CardGradientePageState extends State<CardGradientePage> {
     return Scaffold(
       backgroundColor: Color(0xffEAEAEA),
       body: SafeArea(
+        top: true,
         child: SingleChildScrollView(
           child: Column(
             children: [_cardLinerarGradiente(), _cardBody()],
@@ -60,6 +61,7 @@ class _CardGradientePageState extends State<CardGradientePage> {
                   onPressed: () {})),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 30),
