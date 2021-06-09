@@ -22,7 +22,8 @@ class _ProgresIndicatorState extends State<ProgresIndicator>
     controller.repeat(reverse: false);
 
     Future.delayed(Duration(seconds: 4),
-        () => Navigator.pushReplacementNamed(context, SecondPage.routerName));
+        () => Navigator.pushNamedAndRemoveUntil(
+            context, SecondPage.routerName, (route) => false));
 
     super.initState();
   }
