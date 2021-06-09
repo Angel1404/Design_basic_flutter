@@ -21,24 +21,27 @@ class CardPage extends StatelessWidget {
       top: 140,
       left: 20,
       child: Container(
-          height: 150,
-          child: Image(
-            image: NetworkImage(
-                'https://i.pinimg.com/736x/6e/c4/c2/6ec4c2a66cf55deb60ef6bd5efc21ef4.jpg'),
-            fit: BoxFit.fill,
-            width: 110,
+          height: 140,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15.0),
+            child: Image(
+              image: NetworkImage(
+                  'https://i.pinimg.com/736x/6e/c4/c2/6ec4c2a66cf55deb60ef6bd5efc21ef4.jpg'),
+              fit: BoxFit.fill,
+              width: 110,
+            ),
           )),
     );
   }
 
   Container _cardDetalle() {
     return Container(
-      margin: EdgeInsets.all(5),
-      height: 220,
+      margin: const EdgeInsets.all(15),
+      height: 210,
       width: double.infinity,
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(50),
+          color: Colors.blue[700],
+          borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
                 offset: Offset(0, 4), blurRadius: 4, color: Colors.black12)
@@ -46,7 +49,7 @@ class CardPage extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -56,7 +59,7 @@ class CardPage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 30, top: 30),
+            margin: const EdgeInsets.only(left: 30, top: 30),
             child:
                 Align(alignment: Alignment.centerLeft, child: Text('Welcome')),
           ),

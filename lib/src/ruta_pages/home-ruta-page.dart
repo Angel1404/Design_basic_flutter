@@ -2,9 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:retos_design/src/pages/card_gradiente_page.dart';
+
+import 'package:retos_design/src/pages/reto2/card_gradiente_page.dart';
 import 'package:retos_design/src/pages/card_page.dart';
-import 'package:retos_design/src/pages/hellow_page.dart';
+import 'package:retos_design/src/pages/reto1/hellow_page.dart';
+import 'package:retos_design/src/pages/reto3/progres_indicator.dart';
 
 class HomeRutaPage extends StatelessWidget {
   static final String routerName = 'homeRutaPage';
@@ -52,10 +54,10 @@ class HomeRutaPage extends StatelessWidget {
             icon: CupertinoIcons.app_badge,
           ),
           _RutasCard(
-            nameRouter: '',
-            title: 'Proximamente...',
-            color: Colors.deepPurpleAccent,
-            icon: CupertinoIcons.archivebox,
+            nameRouter: ProgresIndicator.routerName,
+            title: 'Progres Indicator Page',
+            color: Colors.deepOrangeAccent,
+            icon: CupertinoIcons.arrow_clockwise_circle,
           )
         ]),
       ],
@@ -125,7 +127,7 @@ class _RutasCard extends StatelessWidget {
             ),
             child: Container(
               height: 180.0,
-              margin: EdgeInsets.all(15.0),
+              margin: EdgeInsets.only(top: 15.0, right: 15.0, left: 15.0),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(66, 66, 107, 0.7),
                   borderRadius: BorderRadius.circular(20.0)),
