@@ -8,10 +8,12 @@ class PerfilPage extends GetView<PerfilPageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: SafeArea(
+          bottom: false,
           child: ListView(
-        children: [_body()],
-      )),
+            children: [_body()],
+          )),
       bottomNavigationBar: _bottonNavigatorBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
