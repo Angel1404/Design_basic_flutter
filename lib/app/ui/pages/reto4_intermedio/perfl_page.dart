@@ -203,83 +203,8 @@ class PerfilPage extends GetView<PerfilPageController> {
             ]),
         child: Column(
           children: [
-            Stack(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 280.0,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(
-                            'https://foodandtravel.mx/wp-content/uploads/2019/08/GaleraPlatillosfood.jpg',
-                          ),
-                          fit: BoxFit.cover)),
-                ),
-                Positioned(
-                    top: 10,
-                    right: 15,
-                    child: Container(
-                      margin: EdgeInsets.all(8.0),
-                      padding: EdgeInsets.all(6.0),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.0),
-                          color: Colors.white),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.star,
-                            color: Colors.yellow,
-                            size: 20,
-                          ),
-                          SizedBox(
-                            width: 5.0,
-                          ),
-                          _text(contenido: '4.2', padTop: 0, fontSize: 16.0),
-                        ],
-                      ),
-                    ))
-              ],
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 20.0,
-                ),
-                _text(
-                  contenido: 'Variety of dishes',
-                  padTop: 10.0,
-                  //fontSize: 20.0,
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 12.0, right: 30.0, left: 20.0),
-                  height: 35,
-                  width: 85,
-                  decoration: BoxDecoration(
-                    color: Colors.redAccent[300],
-                    gradient: LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [Colors.redAccent, Colors.amberAccent]),
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  child: Center(
-                      child: _text(
-                          contenido: 'Italian', padTop: 0, fontSize: 15.0)),
-                ),
-                _avatares(),
-                _avatares(url: url2, color: Colors.teal[300]),
-                _avatares(url: url3, color: Colors.deepOrange),
-                _avatares(url: url4, color: Colors.amberAccent),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 10.0, left: 40.0, right: 8.0),
-                  child: Icon(
-                    Icons.more_vert_outlined,
-                    size: 30,
-                  ),
-                )
-              ],
-            ),
+            _stackCard(),
+            _row(),
             Padding(
               padding: const EdgeInsets.only(left: 25.0, top: 10.0),
               child: Align(
@@ -297,12 +222,94 @@ class PerfilPage extends GetView<PerfilPageController> {
     );
   }
 
+  Stack _stackCard() {
+    return Stack(
+      children: [
+        Container(
+          width: double.infinity,
+          height: 280.0,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(
+                    'https://foodandtravel.mx/wp-content/uploads/2019/08/GaleraPlatillosfood.jpg',
+                  ),
+                  fit: BoxFit.cover)),
+        ),
+        Positioned(
+            top: 10,
+            right: 15,
+            child: Container(
+              margin: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(6.0),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: Colors.white),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: Colors.yellow,
+                    size: 20,
+                  ),
+                  SizedBox(
+                    width: 5.0,
+                  ),
+                  _text(contenido: '4.2', padTop: 0, fontSize: 16.0),
+                ],
+              ),
+            ))
+      ],
+    );
+  }
+
+  Row _row() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SizedBox(
+          width: 20.0,
+        ),
+        _text(
+          contenido: 'Variety of dishes',
+          padTop: 10.0,
+          //fontSize: 20.0,
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 12.0, right: 30.0, left: 20.0),
+          height: 35,
+          width: 85,
+          decoration: BoxDecoration(
+            color: Colors.redAccent[300],
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.redAccent, Colors.amberAccent]),
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          child: Center(
+              child: _text(contenido: 'Italian', padTop: 0, fontSize: 15.0)),
+        ),
+        _avatares(),
+        _avatares(url: url2, color: Colors.teal[300]),
+        _avatares(url: url3, color: Colors.deepOrange),
+        _avatares(url: url4, color: Colors.amberAccent),
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0, left: 40.0, right: 8.0),
+          child: Icon(
+            Icons.more_vert_outlined,
+            size: 30,
+          ),
+        )
+      ],
+    );
+  }
+
   Widget _avatares(
       {String url =
           'https://i.pinimg.com/236x/6d/5e/38/6d5e38d19bf4c0c9554b1e6beab75952.jpg',
       Color color = Colors.blue}) {
     return Align(
-      widthFactor: 0.4,
+      widthFactor: 0.3,
       child: Container(
           margin: EdgeInsets.only(top: 10.0, left: 20.0),
           child: CircleAvatar(
